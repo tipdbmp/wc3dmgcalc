@@ -1,0 +1,76 @@
+body { background: black; }
+#page      {  }
+#root-ctrl { padding-top: 25px; background: #000; color: white; font-family: Cambria, Verdana; font-size: 16pt; }
+
+p.title { margin-bottom: 40px; text-align: center; font-size:24pt; }
+span.warcraft { color: green; }
+span.warcraft-damage { color: #ff6644; }
+span.warcraft-calculator { color: #4466ff; }
+
+div.content { margin: 0px 20px; }
+div.left, div.right { text-align: center; width: 50%; float: left; }
+div.left img, div.right img { cursor: pointer; }
+
+div.center { text-align: center; margin-top: 20px; }
+
+.ui-tooltip 
+{
+    background: black;
+    color: white;
+    width: 200px;
+    padding: 5px;
+    font-family: Cambria, Verdana;
+    font-size: 14pt;
+    position: absolute;
+    text-align: center;
+}
+
+input { border: none; }
+input[type="checkbox"] { margin: 0px; }
+
+input.number { width: 64px; height: 24px; text-align: center; font-size: 12pt; }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #d0cccc;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #d0cccc;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #d0cccc;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #d0cccc;
+}
+
+span.dmg-min, span.dmg-avg, span.dmg-max { color: white; padding: 10px; }
+
+span.dmg-min { color: #4466ff; }
+span.dmg-avg { color: #ff6644; }
+span.dmg-max { color: green; }
+
+p.gameplay-constants { margin-top: 40px; margin-bottom: 20px; color: gray; font-size: 20pt; }
+p.damage-bonus-table { margin-top: 10px; margin-bottom: 20px; color: gray; }
+p.armor-damage-reduction-multiplier, p.damage-bonus-ethereal-multiplier { margin-top: 20px; margin-bottom: 5px; color: gray; font-size: 12pt; }
+
+span.armor-reduction { padding-left: 10px; color: gray; font-size: 14pt; }
+
+
+table.damage-bonus { margin-left: auto; margin-right: auto; font-size: 10pt; }
+table.damage-bonus td { width: 32px; height: 32px; }
+table.damage-bonus th { width: 32px; height: 32px; padding-left: 4px;}
+
+img.selected { border-top: 5px solid #841ab4; }
+
+input.small { width: 27px; text-align: center; }
+input.medium { width: 54px; text-align: center; }
+
+img.ethereal { margin-left: -5px; }
+
+div.info { margin-top: 85px; font-size: 12pt; color: gray; }
+
+a { color: teal; }
+span.white { color: white; }
+span.frozen-throne { color: #4466FF; }
+span.blizzard { color: #FF6644; }
+

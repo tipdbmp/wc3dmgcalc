@@ -1,0 +1,110 @@
+<div id="page">
+<div id="root-ctrl" ng-controller="RootCtrl">
+<div class="content">
+    <p class="title" title="because it is that hard =)">
+        <span class="warcraft">WarCraft</span> III
+        <span class="warcraft-damage">Damage</span>
+        <span class="warcraft-calculator">Calculator</span>
+    </p>
+    <div class="left">
+        <img id="img-{{at.name}}" src="war3dmgcalc/common-materials/icons/attack/{{at.name}}.png" title="{{at.tooltip}}" ng-click="set_current_attack_type(at.name)" ng-repeat="at in attack_types">
+        <p>
+            <input 
+                type="number" 
+                ng-model="dmg.min" 
+                class="number"
+                placeholder="min"
+            >
+            -
+            <input 
+                type="number" 
+                ng-model="dmg.max" 
+                class="number"
+                placeholder="max"
+            >
+        </p>
+    </div>        
+
+    <div class="right">
+        <img id="img-{{at.name}}" src="war3dmgcalc/common-materials/icons/armor/{{at.name}}.png" title="{{at.tooltip}}" ng-click="set_current_armor_type(at.name, this)" ng-repeat="at in armor_types">
+        <p>
+            <input
+                type="number"
+                ng-model="armor.points"
+                class="number"
+                placeholder="armor"
+            >
+            
+            <span class="armor-reduction">armor reduction: {{ get_armor_reduction() }}</span>
+        </p>
+    </div>
+    
+    <span class="clear"></span>
+    <div class="center">
+        <span class="dmg-min">
+            min: {{ calculate_min_damage() }}
+        </span>
+        <span class="dmg-avg">
+            avg: {{ calculate_avg_damage() }}
+        </span>
+        <span class="dmg-max">
+            max: {{ calculate_max_damage() }}
+        </span>
+        
+        <span title="Ethereal: only Spell and Magic Damage can affect ethereal units (spirit walker's ethereal form and banished units)">
+            <input type="checkbox" ng-model="is_ethereal">
+            <img class="ethereal" width="13" height="13" src="war3dmgcalc/common-materials/icons/armor/armor-ethereal.png">
+        </span>
+        
+        <p class="gameplay-constants">
+            Gameplay Constants
+        </p>
+        
+        <p class="damage-bonus-table">
+            Damage Bonus Table
+        </p>
+        
+        <table class="damage-bonus">
+            <tr>
+                <th>&nbsp;</th>
+                <th ng-repeat="at in armor_types">
+                    <img width="32" height="32" src="war3dmgcalc/common-materials/icons/armor/{{at.name}}.png" title="{{at.tooltip}}">
+                </th>
+            </tr>
+            <tr ng-repeat="at in attack_types">
+                <td>
+                    <img width="32" height="32" src="war3dmgcalc/common-materials/icons/attack/{{at.name}}.png" title="{{at.tooltip}}">
+                </td>
+                <td ng-repeat="art in armor_types">
+                    <input class="small" ng-model="dmg_bonus_table[at.name][art.name]"
+                        >
+
+                </td>
+            </tr>
+        </table>
+        <p class="armor-damage-reduction-multiplier">Armor Damage Reduction Multiplier: 
+            <input class="medium" type="number" ng-model="armor_damage_reduction_multiplier">
+        </p>
+        <p class="damage-bonus-ethereal-multiplier">
+            Damage Bonus Ethereal Multiplier:
+            <input class="medium" type="number" ng-model="damage_bonus_ethereal_multiplier">
+        </p>
+    </div>
+    
+    <div class="info">
+        <p>Armor reduction formulas from: <a ng-href="http://www.wc3c.net/showthread.php?p=966340">cohadar's acalc</a>, check <a ng-href="http://wc3c.net">wc3c.net</a> as well =)</p>
+        <p>You can download the calculator from <a ng-href="https://github.com/tipdbmp/wc3dmgcalc">git</a>.</p>
+        <p>
+            <a ng-href="https://en.wikipedia.org/wiki/Warcraft_3">
+                <span class="warcraft">WarCraft</span> 
+                <span class="white">III</span>
+            </a>
+            <a ng-href="https://en.wikipedia.org/wiki/Warcraft_III:_The_Frozen_Throne">
+                [<span class="frozen-throne">The Frozen Throne</span>]
+            </a>
+            
+            by <span class="blizzard">Blizzard Entertainment</span></p>
+    </div>
+</div>
+</div>
+</div>
